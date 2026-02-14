@@ -1,0 +1,1 @@
+# wpf-device-inventory-clean-architecture
