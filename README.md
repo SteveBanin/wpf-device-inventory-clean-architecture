@@ -2,14 +2,14 @@
 
 A small but production-style **WPF (.NET 8)** desktop application that demonstrates:
 
-- ✅ **WPF + MVVM** (state-safe ViewModels, clean separation)
-- ✅ **Clean Architecture** (Domain / Application / Infrastructure / Presentation)
-- ✅ **Entity Framework Core + SQL-ready design** (default: SQLite, SQL Server supported)
-- ✅ **Automated tests** (Unit + Integration)
-- ✅ **CI-ready build** with GitHub Actions (restore → build → test)
-- ✅ Practical **GenAI prompt engineering** notes for modern development workflows
+-  **WPF + MVVM** (state-safe ViewModels, clean separation)
+-  **Clean Architecture** (Domain / Application / Infrastructure / Presentation)
+-  **Entity Framework Core + SQL-ready design** (default: SQLite, SQL Server supported)
+-  **Automated tests** (Unit + Integration)
+-  **CI-ready build** with GitHub Actions (restore → build → test)
+-  Practical **GenAI prompt engineering** notes for modern development workflows
 
-This repository was created as a showcase project for **Senior C#/.NET/WPF Software Developer** roles.
+This repository was created as a showcase project for **Senior C#/.NET / WPF Software Developer** roles.
 
 ---
 
@@ -45,6 +45,58 @@ More details: see [`docs/architecture.md`](docs/architecture.md)
 
 ---
 
+## Getting Started
+
+### Requirements
+- Windows (WPF)
+- .NET SDK
+- Visual Studio 2022 (recommended)
+
+> Note: This repo targets **net8.0** and **net8.0-windows**.  
+> Newer SDKs (e.g., 9.x) can still build it, but using the .NET 8 SDK is recommended for consistency.
+
+### Build the solution
+From the repository root (where `WpfDeviceInventory.sln` is located):
+
+```bash
+dotnet restore WpfDeviceInventory.sln
+dotnet build WpfDeviceInventory.sln -c Release
+```
+
+### Run the app
+
+```bash
+dotnet run --project src/Presentation.Wpf -c Release
+```
+
+### Testing 
+
+#### Run all tests
+```bash 
+dotnet test WpfDeviceInventory.sln -c Release
+```
+#### Testing strategy
+- UnitTests validate Domain/Application-level logic (portable net8.0)
+- IntegrationTests validate Infrastructure behavior using EF Core (SQLite in-memory, net8.0)
+
+### CI (GitHub Actions)
+A CI workflow is included here:
+- .github/workflows/ci.yml
+
+It runs on Windows (required for WPF) and executes:
+- dotnet restore
+- dotnet build
+- dotnet test
+
+### Documentation
+- Architecture: docs/architecture.md
+- GenAI prompt engineering notes: docs/genai-prompts.md
+- Roadmap (planned commit history): docs/roadmap.md
+
+### License
+More details: MIT — see [`LICENSE`](LICENSE)
+
+---
 ## Repository Structure
 
 ```text
@@ -60,3 +112,4 @@ More details: see [`docs/architecture.md`](docs/architecture.md)
   architecture.md
   genai-prompts.md
   roadmap.md
+```
