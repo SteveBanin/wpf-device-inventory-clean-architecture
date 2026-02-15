@@ -1,0 +1,85 @@
+#############################
+# OS / Editor
+#############################
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+#############################
+# Visual Studio / Rider
+#############################
+.vs/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+#############################
+# Build outputs
+#############################
+**/bin/
+**/obj/
+**/Debug/
+**/Release/
+**/x64/
+**/x86/
+**/AnyCPU/
+
+#############################
+# Test results / coverage
+#############################
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+coverage/
+coverage-report/
+
+#############################
+# NuGet
+#############################
+packages/
+*.nupkg
+*.snupkg
+.nuget/
+
+#############################
+# Logs
+#############################
+*.log
+
+#############################
+# WPF / ClickOnce / Publish
+#############################
+**/AppPackages/
+**/publish/
+**/*.appx
+**/*.appxbundle
+**/*.msix
+**/*.msixbundle
+
+#############################
+# Local databases / data files (if used)
+#############################
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+
+#############################
+# JetBrains / VS Code
+#############################
+.vscode/
+*.code-workspace
+
+#############################
+# Secrets (good practice)
+#############################
+appsettings.Development.json
+secrets.json
+*.pfx
+*.snk
