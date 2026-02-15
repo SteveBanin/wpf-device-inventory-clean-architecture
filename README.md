@@ -2,9 +2,6 @@
 
 # WPF Device Inventory — Clean Architecture + MVVM (net8.0)
 
-
-# WPF Device Inventory — Clean Architecture + MVVM (net8.0)
-
 A small but production-style **WPF (.NET 8)** desktop application that demonstrates:
 
 -  **WPF + MVVM** (state-safe ViewModels, clean separation)
