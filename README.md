@@ -1,3 +1,8 @@
+![CI](https://github.com/SteveBanin/wpf-device-inventory-clean-architecture/actions/workflows/ci.yml/badge.svg)
+
+# WPF Device Inventory — Clean Architecture + MVVM (net8.0)
+
+
 # WPF Device Inventory — Clean Architecture + MVVM (net8.0)
 
 A small but production-style **WPF (.NET 8)** desktop application that demonstrates:
