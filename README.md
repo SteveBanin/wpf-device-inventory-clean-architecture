@@ -89,12 +89,12 @@ It runs on Windows (required for WPF) and executes:
 - dotnet test
 
 ### Documentation
-- Architecture: docs/architecture.md
-- GenAI prompt engineering notes: docs/genai-prompts.md
-- Roadmap (planned commit history): docs/roadmap.md
+- Architecture: [`docs/architecture.md`](docs/architecture.md)
+- GenAI prompt engineering notes: [`docs/genai-prompts.md`](docs/genai-prompts.md)
+- Roadmap (planned commit history): [`docs/roadmap.md`](docs/roadmap.md)
 
 ### License
-More details: MIT — see [`LICENSE`](LICENSE)
+MIT — see [`LICENSE`](LICENSE)
 
 ---
 ## Repository Structure
