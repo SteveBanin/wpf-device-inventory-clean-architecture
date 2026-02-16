@@ -3,10 +3,81 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Presentation.Wpf"
+        xmlns:vm="clr-namespace:Presentation.Wpf.ViewModels"
+        xmlns:views="clr-namespace:Presentation.Wpf.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="WPF Device Inventory"
+        Height="650"
+        Width="1000"
+        WindowStartupLocation="CenterScreen">
 
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:DeviceListViewModel}">
+            <views:DeviceListView />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:DeviceDetailViewModel}">
+            <views:DeviceDetailView />
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Main navigation content -->
+        <ContentControl Grid.Row="0" Content="{Binding AppState.CurrentViewModel}" />
+
+        <!-- Bottom status area -->
+        <Border Grid.Row="1"
+            Padding="10"
+            Background="#F3F3F3"
+            BorderBrush="#DDDDDD"
+            BorderThickness="1,1,0,0">
+
+            <StackPanel>
+
+                <!-- Error banner: visible only when ErrorMessage has text -->
+                <Border Background="#FDE7E7"
+                    BorderBrush="#E6A0A0"
+                    BorderThickness="1"
+                    CornerRadius="4"
+                    Padding="8"
+                    Margin="0,0,0,8"
+                    Visibility="{Binding AppState.ErrorMessage, Converter={StaticResource StringToVisibility}}">
+                    <DockPanel>
+                        <TextBlock Text="⚠"
+                               FontSize="14"
+                               Margin="0,0,8,0"
+                               VerticalAlignment="Center"/>
+
+                        <TextBlock Text="{Binding AppState.ErrorMessage}"
+                               Foreground="#B00020"
+                               FontWeight="SemiBold"
+                               VerticalAlignment="Center"/>
+                    </DockPanel>
+                </Border>
+
+                <!-- Status row -->
+                <DockPanel LastChildFill="True">
+
+                    <!-- Busy indicator -->
+                    <TextBlock DockPanel.Dock="Left"
+                           Text="Loading..."
+                           FontWeight="SemiBold"
+                           Margin="0,0,12,0"
+                           Visibility="{Binding AppState.IsBusy, Converter={StaticResource BoolToVisibility}}"/>
+
+                    <!-- Status message -->
+                    <TextBlock Text="{Binding AppState.StatusMessage}"
+                           VerticalAlignment="Center"/>
+                </DockPanel>
+
+            </StackPanel>
+        </Border>
     </Grid>
+
 </Window>
+

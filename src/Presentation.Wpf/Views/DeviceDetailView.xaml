@@ -19,23 +19,50 @@
                    Text="Device Details" />
 
         <StackPanel Grid.Row="1" Margin="0,12,0,12">
+
+            <!-- Name -->
             <TextBlock Text="Name"/>
-            <TextBox />
+            <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"  Height="30" />
+            <TextBlock Text="{Binding NameError}"
+                       Foreground="#B00020"
+                       Margin="0,4,0,10"
+                       Visibility="{Binding NameError, Converter={StaticResource StringToVisibility}}"/>
 
+            <!-- Serial Number -->
             <TextBlock Text="Serial Number"/>
-            <TextBox />
+            <TextBox Text="{Binding SerialNumber, UpdateSourceTrigger=PropertyChanged}"  Height="30"/>
+            <TextBlock Text="{Binding SerialError}"
+                       Foreground="#B00020"
+                       Margin="0,4,0,10"
+                       Visibility="{Binding SerialError, Converter={StaticResource StringToVisibility}}"/>
 
+            <!-- Location -->
             <TextBlock Text="Location"/>
-            <TextBox />
+            <TextBox Text="{Binding Location, UpdateSourceTrigger=PropertyChanged}"  Height="30"/>
 
-            <TextBlock Text="Last Service Date"/>
-            <DatePicker />
+            <!-- Last Service Date -->
+            <TextBlock Margin="0,10,0,0" Text="Last Service Date"/>
+            <DatePicker SelectedDate="{Binding LastServiceDate}" />
+
+            <!-- Description -->
+            <TextBlock Margin="0,10,0,0" Text="Description"/>
+            <TextBox Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}"
+                     AcceptsReturn="True"
+                     TextWrapping="Wrap"
+                     Height="100"/>
         </StackPanel>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <Button Content="Save"/>
-            <Button Content="Cancel"/>
+            <Button Content="Save"
+                    Command="{Binding SaveCommand}"
+                    Margin="0,0,8,0"
+                    IsDefault="True"
+                    ToolTip="{Binding SaveTooltip}"
+                    ToolTipService.ShowOnDisabled="True"/>
+            <Button Content="Cancel"
+                    Command="{Binding CancelCommand}"
+                    IsCancel="True"/>
         </StackPanel>
-    </Grid>
 
+    </Grid>
 </UserControl>

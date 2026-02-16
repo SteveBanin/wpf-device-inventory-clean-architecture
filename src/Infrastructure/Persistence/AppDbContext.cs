@@ -3,6 +3,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Persistence;
 
+
+/// <summary>
+/// EF Core database context. This is the "session" to the database.
+/// DbSet<Device> represents the Devices table.
+/// </summary>
 public class AppDbContext : DbContext
 {
     public DbSet<Device> Devices => Set<Device>();

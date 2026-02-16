@@ -20,21 +20,25 @@
 
         <!-- Minimal list UI: bind ItemsSource later -->
         <ListView Grid.Row="1"
-                  Margin="0,12,0,12">
+                  Margin="0,12,0,12"
+                  ItemsSource="{Binding Devices}"
+                  SelectedItem="{Binding SelectedDevice, Mode=TwoWay}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="200"/>
                     <GridViewColumn Header="Serial" DisplayMemberBinding="{Binding SerialNumber}" Width="200"/>
                     <GridViewColumn Header="Location" DisplayMemberBinding="{Binding Location}" Width="200"/>
+                    <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Description}" Width="200"/>
                 </GridView>
             </ListView.View>
         </ListView>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <Button Content="Add"/>
-            <Button Content="Edit"/>
-            <Button Content="Delete"/>
+            <Button Content="Add" Command="{Binding AddCommand}" Margin="0,0,8,0"/>
+            <Button Content="Edit" Command="{Binding EditCommand}" Margin="0,0,8,0"/>
+            <Button Content="Delete" Command="{Binding DeleteCommand}"/>
         </StackPanel>
+
     </Grid>
 
 </UserControl>
