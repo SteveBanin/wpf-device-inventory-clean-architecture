@@ -11,7 +11,7 @@ A small but production-style **WPF (.NET 8)** desktop application that demonstra
 -  **CI-ready build** with GitHub Actions (restore → build → test)
 -  Practical **GenAI prompt engineering** notes for modern development workflows
 
-This repository was created as a showcase project for **Senior C#/.NET / WPF Software Developer** roles.
+This repository demonstrates production-style WPF engineering with maintainable architecture, testable domain logic, persistence abstractions, and automated CI.
 
 ---
 
